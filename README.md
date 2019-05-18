@@ -1,47 +1,103 @@
 # hallow-word
 word-all(什么都有的杂物库)
-/*sql13.3.2*/
-create procedure all_系
-as 
-select 系.名称,系.编号
-from 系
-exec all_系
 
+package com.fourth;
+public class aa extends bb{
 
-import java.io.*;
-import java.io.IOException;
-public class a {
-
-
-	static class book
-	{
-			public  void read(){
-				System.out.print("ok");
-//		RandomAccessFile read_txt=RandomAccessFile() 
+	public aa() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
-		
-			
-	}
-
 
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) throws IOException{
+	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		a.book book1=new a.book();
 		
-		try 
-		{
-			book1.read();
-		}
-		catch(IOException e){
-			e.printStackTrace();
-			
-		}
+		aa one =new aa();
 
 	}
 
+}
 
+
+package com.fourth;
+import java.io.*;
+
+
+
+public class bb {
+	private File fo;
+	private File fofo;
+	private String str="good job";
+	public String dir="c:\\bb"; 
+	
+
+	public bb() {
+		this.fo=new File(this.dir);
+		this.fofo=new File(this.dir,"a.txt");
+		this.str=(String)text();
+		
+		// TODO Auto-generated constructor stub
+	}
+	public Object text() {
+		try{
+//			writes(this.str);
+			reads();
+
+//		create();
+			System.out.print("ok");
+		}
+		catch(FileNotFoundException e) {
+			try {
+			create();
+			create_file();
+			return text();
+			
+			}
+			catch(Exception e1){
+				e1.printStackTrace();
+				System.out.print(e1);
+			}
+		}
+		catch(Exception e){
+			e.printStackTrace();
+			System.out.print(e);
+		}
+		return this.str;
+		
+	}
+	public void create() throws IOException{
+
+		this.fo.mkdir();
+
+	}
+	public void create_file() throws IOException{
+
+		this.fofo.createNewFile();
+
+	}
+	public void reads() throws IOException{
+		FileInputStream f=new FileInputStream(this.fofo);
+		
+		InputStreamReader ff=new InputStreamReader(f);
+		BufferedReader fff=new BufferedReader(ff);
+		String s=fff.readLine();
+		
+		System.out.println(s);
+		
+	}
+	public void writes(String str) throws IOException{
+		System.out.println(str);
+		FileOutputStream  f=new FileOutputStream(this.fofo);
+		BufferedOutputStream ff=new BufferedOutputStream(f);
+		PrintWriter pw=new PrintWriter(ff);
+		
+		pw.print(str);
+		pw.close();
+
+		
+	}
 
 }
